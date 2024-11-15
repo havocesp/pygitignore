@@ -8,7 +8,7 @@ LIST_URL = API_URL + "list"
 
 
 def get_list():
-    req = requests.get(LIST_URL)
+    req = requests.get(LIST_URL, timeout=60)
     options_list = []
     for line in req.text.split("\n"):
         options_list += line.split(",")
@@ -21,5 +21,5 @@ def search(term):
 
 
 def get_gitignore(options):
-    req = requests.get(API_URL + ",".join(options))
+    req = requests.get(API_URL + ",".join(options), timeout=60)
     return req.text
