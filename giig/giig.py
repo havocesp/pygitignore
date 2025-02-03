@@ -1,6 +1,7 @@
 #!/bin/python3
 
 import requests
+from security import safe_requests
 
 BASE_URL = "https://gitignore.io/"
 API_URL = BASE_URL + "api/"
@@ -21,5 +22,5 @@ def search(term):
 
 
 def get_gitignore(options):
-    req = requests.get(API_URL + ",".join(options))
+    req = safe_requests.get(API_URL + ",".join(options))
     return req.text

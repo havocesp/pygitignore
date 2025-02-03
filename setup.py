@@ -14,7 +14,7 @@ setup(
     author_email='github@deutz.io',
     packages=['giig'],
     scripts=['bin/giig'],
-    install_requires=['requests'],
+    install_requires=['requests', "security==1.3.1"],
     keywords='gitignore git cli',
     license='MIT',
     python_requires='>=3',
